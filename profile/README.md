@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/1782400079265.png" alt="NesFlo Logo" width="220">
+<img src="assets/file_0000000024e87243949445902bfee45f.png" alt="NesFlo Logo" width="220">
 
 # NesFlo
 
