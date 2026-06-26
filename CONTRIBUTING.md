@@ -10,6 +10,47 @@ We welcome contributors of all experience levels. If you're passionate about wor
 
 ---
 
+## Table of Contents
+
+- [Project Status](#project-status)
+- [Our Engineering Philosophy](#our-engineering-philosophy)
+- [Ways You Can Contribute](#ways-you-can-contribute)
+- [Before You Start](#before-you-start)
+- [Development Environment](#development-environment)
+- [Repository Structure](#repository-structure)
+- [Development Workflow](#development-workflow)
+- [Branch Naming Convention](#branch-naming-convention)
+- [Commit Message Convention](#commit-message-convention)
+- [Keeping Changes Focused](#keeping-changes-focused)
+- [Synchronizing with the Main Branch](#synchronizing-with-the-main-branch)
+- [Pull Request Guidelines](#pull-request-guidelines)
+- [Pull Request Checklist](#pull-request-checklist)
+- [Code Review Process](#code-review-process)
+- [Coding Standards](#coding-standards)
+- [Documentation Standards](#documentation-standards)
+- [Testing](#testing)
+- [Code Quality](#code-quality)
+- [Breaking Changes](#breaking-changes)
+- [Reporting Issues](#reporting-issues)
+- [Feature Requests](#feature-requests)
+- [Discussions](#discussions)
+- [Request for Comments (RFC)](#request-for-comments-rfc)
+- [Architecture Decision Records (ADRs)](#architecture-decision-records-adrs)
+- [Release Process](#release-process)
+- [Semantic Versioning](#semantic-versioning)
+- [Project Roadmap](#project-roadmap)
+- [Decision-Making](#decision-making)
+- [Communication](#communication)
+- [Community Expectations](#community-expectations)
+- [Recognition](#recognition)
+- [Becoming a Maintainer](#becoming-a-maintainer)
+- [Contributor License](#contributor-license)
+- [Security](#security)
+- [Questions?](#questions)
+- [Thank You](#thank-you)
+
+---
+
 # Project Status
 
 > **Current Phase:** Research & Validation
