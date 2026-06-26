@@ -21,7 +21,7 @@ Responses use the following error body:
 {
   "code": "ERR_CODE",
   "message": "Human readable message",
-  "details": { }
+  "details": {}
 }
 ```
 
