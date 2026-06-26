@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="NesFlo banner" width="220">
+<img src="assets/banner.png" alt="NesFlo banner" style="max-width:100%;height:auto;">
 
 # NesFlo
 
