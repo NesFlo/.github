@@ -66,7 +66,7 @@ These inputs can then power:
 - Business intelligence
 - Database synchronization
 - Enterprise integrations
-- AI-powered insights *(planned)*
+- AI-powered insights _(planned)_
 
 ---
 
@@ -175,6 +175,6 @@ To help maintain a welcoming and professional community, please review:
 
 **NesFlo**
 
-*Turning Conversations Into Workflows.*
+_Turning Conversations Into Workflows._
 
 </div>
