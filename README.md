@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="profile/assets/file_0000000024e87243949445902bfee45f.png" alt="NesFlo banner" width="220">
+<img src="profile/assets/banner.png" alt="NesFlo banner" width="220">
 
 # NesFlo
 
