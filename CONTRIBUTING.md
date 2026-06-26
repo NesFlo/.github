@@ -925,11 +925,10 @@ We're excited to build the future of workflow intelligence together.
 
 <div align="center">
 
-### **NesFlo**
+## NesFlo
 
-**Turning Conversations Into Workflows.**
+### Turning Conversations Into Workflows.
 
-Made with love by contributors around the world.
+Building the future of workflow intelligence through open collaboration.
 
 </div>
-
