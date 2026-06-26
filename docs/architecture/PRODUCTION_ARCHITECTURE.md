@@ -11,27 +11,32 @@ This document describes the production-grade architecture for NesFlo. It is inte
 ## Target Technology Stack
 
 ### Frontend
+
 - Next.js
 - React
 - TypeScript
 - Tailwind CSS
 
 ### Mobile
+
 - Flutter
 - Dart
 
 ### Backend
+
 - FastAPI
 - Python 3.11+
 - Pydantic for data modeling
 - Uvicorn / Gunicorn for ASGI deployments
 
 ### Data & State
+
 - PostgreSQL as the source-of-truth
 - Redis for caching, queues, distributed locks, and transient state
 - Object storage for file assets, reports, and export artifacts
 
 ### Infrastructure
+
 - Vercel for frontend deployment
 - Render for backend FastAPI services, workers, and background jobs
 - Terraform / IaC planned for later enterprise deployments
@@ -58,6 +63,7 @@ Services communicate through REST APIs, events, and shared persistence patterns.
 ### API Gateway
 
 Responsibilities:
+
 - Ingress for all external traffic
 - Authentication and authorization enforcement
 - API versioning and request validation
@@ -65,6 +71,7 @@ Responsibilities:
 - Request routing to internal backend services
 
 Production best practices:
+
 - Keep the gateway lightweight and stateless.
 - Use a managed edge or API Gateway when available.
 - Emit request metrics, response times, and error rates.
@@ -72,6 +79,7 @@ Production best practices:
 ### Auth Service
 
 Responsibilities:
+
 - User identity and session management
 - JWT token issuance and validation
 - API keys and service authentication
@@ -79,6 +87,7 @@ Responsibilities:
 - Organization and role management
 
 Production best practices:
+
 - Keep secrets out of code and in managed secret storage.
 - Use short-lived JWTs and refresh tokens.
 - Store authentication events in audit logs.
@@ -86,12 +95,14 @@ Production best practices:
 ### Capture Layer
 
 Responsibilities:
+
 - Accept inbound events from connectors and clients
 - Normalize messages into a common internal event format
 - Validate basic payload structure before processing
 - Forward events into the pipeline
 
 Production best practices:
+
 - Validate input aggressively.
 - Reject invalid payloads early with clear error responses.
 - Use schema definitions for event normalization.
@@ -99,12 +110,14 @@ Production best practices:
 ### Message Processing Core
 
 Responsibilities:
+
 - Parse and normalize raw communication data
 - Run template detection and field extraction
 - Enrich events with metadata, confidence scores, and context
 - Produce validated structured records for workflows
 
 Production best practices:
+
 - Separate parsing from validation and workflow execution.
 - Keep each parser engine small and testable.
 - Capture parsing metrics and error classification.
@@ -112,11 +125,13 @@ Production best practices:
 ### Validation Engine
 
 Responsibilities:
+
 - Apply business validation rules to structured events
 - Enforce data quality, required fields, and domain constraints
 - Produce validation errors or pass records onward
 
 Production best practices:
+
 - Support reusable rule definitions.
 - Treat validation failures as first-class events.
 - Use versioned rule sets for safe evolution.
@@ -124,6 +139,7 @@ Production best practices:
 ### Workflow Engine
 
 Responsibilities:
+
 - Orchestrate actions and business logic based on events
 - Evaluate conditions and decision branches
 - Execute sequential, parallel, and delayed actions
@@ -131,6 +147,7 @@ Responsibilities:
 - Record execution history and outcomes
 
 Production best practices:
+
 - Store workflow state durably.
 - Keep workflow execution idempotent.
 - Offer observability into active and failed workflow instances.
@@ -138,12 +155,14 @@ Production best practices:
 ### Integration Engine
 
 Responsibilities:
+
 - Communicate with external systems and SaaS platforms
 - Run connectors for CRM, ERP, email, messaging, storage, and APIs
 - Handle retries, backoff, and dead-letter behavior
 - Keep external integrations isolated from core workflow state
 
 Production best practices:
+
 - Use adapter patterns to support pluggable connectors.
 - Store connector configurations in secure storage.
 - Respect API rate limits and circuit breaker semantics.
@@ -151,11 +170,13 @@ Production best practices:
 ### Analytics & Reporting Services
 
 Responsibilities:
+
 - Aggregate operational metrics and KPIs
 - Generate reports, dashboards, and scheduled summaries
 - Support export formats and document generation
 
 Production best practices:
+
 - Keep analytics workloads separate from latency-sensitive APIs.
 - Use batch processing for heavy report generation.
 - Cache computed dashboards where feasible.
@@ -163,11 +184,13 @@ Production best practices:
 ### Background Workers
 
 Responsibilities:
+
 - Process long-running or asynchronous tasks
 - Run scheduled jobs, retries, imports, and exports
 - Execute AI enrichment jobs outside request paths
 
 Production best practices:
+
 - Use queue-backed worker pools.
 - Monitor queue depth and worker health.
 - Ensure tasks are idempotent and retry-safe.
