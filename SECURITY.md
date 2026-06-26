@@ -422,3 +422,23 @@ When designing new features, contributors should consider:
 - Maintainability
 
 Building secure software begins with thoughtful design decisions.
+
+---
+
+# Recognition
+
+We sincerely appreciate the efforts of security researchers and contributors who help improve the security of the NesFlo ecosystem.
+
+With the reporter's permission, we may acknowledge responsible disclosures in future release notes, security advisories, or a dedicated Security Hall of Fame.
+
+Thank you for helping us build a more secure platform for everyone.
+
+---
+
+# Questions
+
+If you have questions about this security policy or are unsure whether an issue should be reported as a security vulnerability, please contact the project maintainers through GitHub.
+
+As the project matures, official security contact channels will be announced and documented here.
+
+Thank you for helping keep NesFlo secure.
