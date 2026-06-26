@@ -1,0 +1,1 @@
+﻿---\nname: Feature request\nabout: Suggest an improvement or new feature\nlabels: enhancement\n---\n\n## Summary\n\nDescribe the feature or improvement.\n\n## Motivation\n\nWhy is this important?\n\n## Proposed solution\n\nDescribe the solution or approach.\n\n## Additional context\n\nAdd any other details or examples.

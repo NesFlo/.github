@@ -28,6 +28,7 @@ Objective: validate product-market fit with minimal DevOps overhead.
 Why this stage: quick iteration, low operational cost, and straightforward scaling for early users. Keep infrastructure concise and well-documented so migration is possible later.
 
 Considerations:
+
 - Use environment variables and secrets management provided by the host.
 - Build and publish Docker images in addition to platform deployments so later stages can reuse artifacts.
 - Add basic monitoring and logging integrations (Sentry, simple Prometheus exporters, basic dashboards).
@@ -48,6 +49,7 @@ Objective: increase control, cost efficiency, and portability by running contain
 Why this stage: VPS deployments lower long-term costs and give operational control without full enterprise complexity. Docker portability ensures that containers built in this stage run on later platforms with minimal change.
 
 Considerations:
+
 - Design a repeatable deployment scripts set (Ansible/Terraform/Makefile) for provisioning servers, firewall rules, and TLS certs.
 - Harden machines: automatic updates, limited SSH access, user accounts, and logging.
 - Implement backup and restore procedures and test recovery regularly.
@@ -69,6 +71,7 @@ Objective: adopt cloud-native managed services for reliability, security, and en
 Why this stage: enterprise-grade guarantees — redundancy, compliance features, fine-grained IAM, and integrations with common corporate tooling.
 
 Considerations:
+
 - Use infrastructure-as-code (Terraform, CloudFormation) and CI-driven deployments.
 - Implement VPCs, subnets, and security groups for network isolation.
 - Adopt best-practice IAM roles, secrets management (AWS Secrets Manager), and centralized logging/monitoring.
@@ -88,6 +91,7 @@ Objective: support large-scale multi-region deployments, complex rollout strateg
 Why this stage: Kubernetes provides advanced orchestration, resilience, and scalability but increases operational complexity — adopt only when justified by traffic and operational capacity.
 
 Considerations:
+
 - Invest in runbooks, SRE practices, and a robust CI/CD pipeline supporting image promotion and controlled rollouts.
 - Consider a service mesh (Istio/Linkerd) only after observing clear need for traffic control / observability features.
 
