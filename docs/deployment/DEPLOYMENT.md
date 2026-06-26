@@ -7,7 +7,7 @@ This document summarizes a pragmatic, portable deployment strategy for NesFlo th
 ## Deployment Philosophy
 
 - Deploy incrementally: start with low-ops managed services to validate the product and iterate quickly.
-- Keep the application Docker-first and portable so hosting targets can change without code rewrites.
+- Keep the application portable so hosting targets can change without code rewrites.
 - Separate concerns: frontend, API, workers, data stores, and integrations should be independently deployable.
 - Favor observable, repeatable infrastructure (infrastructure as code, container images, versioned manifests).
 - Prioritize security and tenant isolation from day one.
@@ -35,23 +35,21 @@ Considerations:
 
 ---
 
-## Phase 2 — Growth (Docker on VPS)
+## Phase 2 — Growth
 
-Objective: increase control, cost efficiency, and portability by running containerized services on VPS instances.
+Objective: increase control, cost efficiency, and portability by extending the Render/Vercel deployment model and using managed infrastructure services.
 
-- Move backend services to Docker containers and orchestrate with `docker-compose` (Ubuntu servers on Contabo, Hetzner, or similar VPS providers).
-- Keep the frontend on Vercel for fast CDN delivery and previews while backend moves to VPS.
-- Continue using Supabase PostgreSQL initially (or migrate to a self-hosted Postgres on a separate VPS if required).
-- Add reverse proxy (Nginx) for TLS termination, routing, and simple load balancing across containers.
-- Introduce Redis for caching and as a broker for background jobs (Celery, RQ), and MinIO if self-hosted object storage is needed.
-- Add monitoring, metrics, and automated backups (Prometheus + Grafana + periodic DB dumps to object storage).
+- Scale backend services on Render using background services and managed databases.
+- Keep the frontend on Vercel for fast CDN delivery and previews.
+- Continue using Supabase PostgreSQL initially, with the option to migrate to a managed database service if needed.
+- Add managed Redis/DB services for resilience and caching.
+- Add monitoring, metrics, and automated backups through Render and managed storage providers.
 
-Why this stage: VPS deployments lower long-term costs and give operational control without full enterprise complexity. Docker portability ensures that containers built in this stage run on later platforms with minimal change.
+Why this stage: keeping the stack on Vercel/Render minimizes operational burden while providing room for growth and faster iteration.
 
 Considerations:
 
-- Design a repeatable deployment scripts set (Ansible/Terraform/Makefile) for provisioning servers, firewall rules, and TLS certs.
-- Harden machines: automatic updates, limited SSH access, user accounts, and logging.
+- Use platform-native secrets and environment variable management.
 - Implement backup and restore procedures and test recovery regularly.
 
 ---
@@ -128,12 +126,12 @@ Kubernetes
 
 ## Recommended Next Steps
 
-1. Adopt a Docker-first development flow: include `Dockerfile` and local `docker-compose.yml` in each service repository.
-2. Add OpenAPI specs and a release process that publishes container images to a registry for reuse.
-3. Document VPS provisioning steps and include a small `infra/` repo with Ansible playbooks or Terraform modules.
+1. Adopt a portable development flow that supports PaaS deployment and local development.
+2. Add OpenAPI specs and a release process that publishes build artifacts for reuse.
+3. Document PaaS deployment steps and provide guidance for Render and Vercel.
 4. Implement basic monitoring and alerting early (error rates, latency, queue lengths, disk and DB health).
 5. Validate backup/restore and disaster recovery procedures before migrating production data.
 
 ---
 
-This document is intentionally high-level. When you're ready I can generate starter artifacts: `Dockerfile` and `docker-compose.yml` templates, a sample `Ansible` playbook for VPS provisioning, and a CI/CD GitHub Actions template for image build and deploy.
+This document is intentionally high-level. When you're ready I can generate starter artifacts for Render and Vercel deployment, and a CI/CD GitHub Actions template for build and deploy.

@@ -211,24 +211,29 @@ The NesFlo organization is organized into independent repositories, each with a 
 
 ```text
 nesflo/
-
-.github/
-docs/
-branding/
-
-backend/
-frontend/
-mobile/
-
-website/
-
-sdk-python/
-sdk-javascript/
-sdk-flutter/
-
-cli/
-examples/
+  .github/              # Organization-level GitHub metadata (local org container only)
+  docs/                 # Local documentation repository container
+  branding/             # Local branding assets repository container
+  nesflo-core/          # Backend repository
+    auth-service/
+    api-gateway/
+    capture-layer/
+    intelligence-layer/
+    validation-engine/
+    workflow-engine/
+    integration-engine/
+  nesflo-frontend/      # Frontend repository
+  nesflo-mobile/        # Mobile repository
+  nesflo-studio/        # Studio / IDE repository for templates, reports, and design tools
+  nesflo-analytics/     # Analytics repository
+  nesflo-ai/            # AI repository
+  nesflo-integrations/  # Integrations repository
+  nesflo-marketplace/   # Marketplace repository
+  nesflo-api/           # API gateway / SDK repository
+  nesflo-cloud/         # Cloud infrastructure repository
 ```
+
+**Important:** `nesflo/` is a local container folder only and is not intended to be published as a GitHub repository. Each top-level folder under `nesflo/` is intended to be a standalone repository. The subfolders inside `nesflo-core/` are internal backend service components within the `nesflo-core` repository, not separate repositories.
 
 Each repository contains its own documentation, dependencies, and development instructions.
 

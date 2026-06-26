@@ -7,14 +7,14 @@ This guide helps contributors set up a development environment, run services loc
 ## Getting Started
 
 - Clone the repository and follow per-service README files.
-- Use the provided Docker Compose for local integration tests.
+- Use local development guidance to run services in a way that mirrors the PaaS deployment targets.
 
 ---
 
 ## Running Services
 
-- Use containerized services for database, cache, and object storage.
-- Start application services with `docker-compose up` or local virtual environments for service-level development.
+- Use local development configurations for database, cache, and object storage.
+- Start application services with local virtual environments or the platform-appropriate tooling for service-level development.
 
 ---
 
