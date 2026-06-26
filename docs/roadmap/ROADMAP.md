@@ -1,5 +1,3 @@
-# ROADMAP.md
-
 # NesFlo Roadmap
 
 Turn Business Conversations into Structured Operations
