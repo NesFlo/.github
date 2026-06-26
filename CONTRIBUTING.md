@@ -774,7 +774,7 @@ Each ADR should document:
 - Alternatives
 - Consequences
 
-This helps future contributors understand not only *what* decisions were made, but also *why* they were made.
+This helps future contributors understand not only _what_ decisions were made, but also _why_ they were made.
 
 ---
 
